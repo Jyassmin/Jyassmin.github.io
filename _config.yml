@@ -108,7 +108,7 @@ author:
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "코딩천재"
   location         : "South Korea"
-  email            : aa5827568@naver.com
+  # email            : aa5827568@naver.com
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"

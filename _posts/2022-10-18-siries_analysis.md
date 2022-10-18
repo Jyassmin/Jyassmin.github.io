@@ -89,13 +89,6 @@ sidebar:
 # 1. 변동의 종류
 
 
-`
-
-ss
-
-`
-
-
 ```
 
 추세변동(trend variation)
@@ -127,15 +120,15 @@ code `code` code
 불규칙변동(irregular variation or random variation)
 
 
-> - 추세변동(trend variation)  
+> 추세변동(trend variation)  
 
-> - 순환변동(cyclical variation)  
+> 순환변동(cyclical variation)  
 
-> - 계절변동(seasonal variation  
+> 계절변동(seasonal variation  
 
-> - 위 변동요인을 동시에 갖는 변동
+> 위 변동요인을 동시에 갖는 변동
 
-> - 불규칙변동(irregular variation or random variation)
+> 불규칙변동(irregular variation or random variation)
 
 
 ---

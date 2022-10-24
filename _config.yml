@@ -105,7 +105,7 @@ analytics:
 # Site Author
 author:
   name             : "Jyassmin"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  avatar           : "/assets/images/author_photo.jpg"
   bio              : "코딩천재민"
   location         : "Seoul"
   # email            : aa5827568@naver.com

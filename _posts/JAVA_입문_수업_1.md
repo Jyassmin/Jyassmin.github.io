@@ -1,8 +1,8 @@
 ---
 layout: single
-title:  "JAVA_입문"
+title:  "[JAVA_입문_수업] 1장 : 기초개념"
 categories: coding
-tag: [JAVA, coding, grammer]
+tag: [JAVA_입문_수업]
 toc: true
 author_profile: true
 ---
@@ -79,17 +79,15 @@ author_profile: true
 </head>
 
 
-# JAVA 입문
+# [JAVA_입문_수업] 1장 : 기초개념
 
-JAVA를 생활코딩 유튜브를 통해 배우고, 배운 지식을 정리하여 아래에 정리하고자한다.
-
-- link : https://www.youtube.com/playlist?list=PLuHgQVnccGMCeAy-2-llhw3nWoQKUvQck
+해당 게시글은 [JAVA_입문_수업](https://www.youtube.com/playlist?list=PLuHgQVnccGMCeAy-2-llhw3nWoQKUvQck) 을 공부하며 정리한 글입니다.
 
 
 ---
 
 
-# 변수(강의20)
+# 변수
 
 
 - 변수 사용 장점
@@ -112,6 +110,8 @@ a = 1;
 System.out.println(a+1) //2
 ```
 
+
+
 - 정수 : int
 
 - 실수 : double
@@ -128,11 +128,11 @@ String a = "안녕"
 int b,c
 b = 1
 c = 2
-
-
 ```
 
-### 주석
+
+
+주석
 
 - 주석(comment)은 // 으로 사용한다.
 
@@ -152,9 +152,15 @@ System.out.println(a)
 */
 ```
 
+<br><br><br><br>
+
+
 ---
 
-# 데이터의 크기(강의25)
+# 자료형
+
+
+## 1. 데이터의 크기
 
 
 - bit : 가장 작은 데이터의 크기
@@ -168,9 +174,10 @@ System.out.println(a)
 
 
 
----
+<br><br>
 
-# 데이터의 타입(강의26)
+
+## 2. 종류
 
 
 - 변수(Varialble) : 변하는 수
@@ -183,9 +190,113 @@ System.out.println(a)
 <img width="552" alt="image" src="https://github.com/Jyassmin/Business-Process-Optimization/assets/88031549/7819bb9b-224e-452f-89d1-b1f29a96538e">
 
 
-- 문자(char)의 경우, 어느 문자든 2byte.
+- 문자(char)의 경우, 어느 문자든 2byte.(8bit)
 
 - 마찬가지로 문자열(String)의 경우, 2개의 문자로이루어져 있다면 메모리는 4byte이다.
+
+
+<br><br>
+
+
+## 3. 배열(Array)
+
+
+변수가 하나의 데이터를 저장하기 위한 것이라면,  
+
+배열은 여러 개의 데이터를 저장하기 위한 것이라고 할 수 있다.
+
+
+### 1) 생성
+
+
+팀플을 진행하는 하나의 팀의 팀원들의 이름을 그룹화 하고 싶다. 이런 경우 배열을 사용한다.
+
+- `(구성요소의 데이터타입)[] (배열 변수명) = {구성1, 구성2, ...};`
+
+- 아래의 경우 배열에 담길 데이터의 타입이 String이기 때문에 String[]이다.
+
+- 파이썬에서는 [], 대괄호를 사용하지만 여기서는 java가 좋아하는 {}, 중괄호를 쓴다!
+
+
+
+```python
+String[] classGroup = { "최진혁", "최유빈", "한이람", "이고잉" };
+```
+
+메모리 관리를 위해 배열의 크기를 정해놓고 싶다면,  
+
+아래와 같이 크기가 3인 배열 객체를 생성하여 변수에 저장해준다.  
+
+(현실에서도 교실의 크기에는 한계가 있기 때문에, 굳이 책상을 많이 만들어 놓을 필요는 없다.)
+
+> 다만, 이 경우 index가 0~2까지 생성되기에 그 이상의 index생성이 불가능해지며,  
+
+> classGroup[3]을 호출하면 존재하지 않는 인덱스를 사용했기 때문에 오류발생!
+
+- ArrayIndexOutOfBoundsException
+
+
+
+```python
+String[] classGroup = new String[3];
+```
+
+파이썬을 먼저 배운 나로서는 배열의 크기를 먼저 정해서 사용하는 것이 적응이 되지 않는다.  
+
+물론 자바에는 컬렉션 Collection이라는 기능이 있다.  
+
+Container라고도 부르는 이 기능을 이용하면 JavaScript의 배열과 같이 유연하게 배열을 사용할 수 있다.
+
+
+<br>
+
+
+### 2) 출력
+
+
+배열 구성요소의 출력은 (배열명)[`index`]에서 index를 통해 호출한다.
+
+
+
+```python
+String[] classGroup = { "최진혁", "최유빈", "한이람", "이고잉" };
+System.out.println(classGroup[0]);
+System.out.println(classGroup[1]);
+System.out.println(classGroup[2]);
+System.out.println(classGroup[3]);
+```
+
+### 3) 삽입
+
+
+배열의 구성요소는 배열을 선언할 때 넣어줘도 되지만, 선언 이후 추가적으로 삽입을 하려면 출력과 반대의 방법을 사용해야한다.
+
+넣어주고 싶은 위치의 index를 확인 후, 배열[index]를 하나의 변수로 생각하고 값을 대입한다.
+
+
+
+```python
+public static void main(String[] args) {
+    String[] classGroup = new String[4];
+    classGroup[0] = "최진혁";
+    System.out.println(classGroup.length);
+    classGroup[1] = "최유빈";
+    System.out.println(classGroup.length);
+    classGroup[2] = "한이람";
+    System.out.println(classGroup.length);
+    classGroup[3] = "이고잉";
+    System.out.println(classGroup.length);
+
+}
+```
+
+<img width="359" alt="image" src="https://github.com/Jyassmin/Causality_Extraction/assets/88031549/9b6ebe94-6c4c-45fa-a2b6-ee782011c807">
+
+
+<br><br>
+
+
+## 4. 참고
 
 
 > 사용하고자 하는 숫자의 범위에 따라 타입을 유동적으로 선택하며 사용한다!
@@ -199,9 +310,14 @@ System.out.println(a)
 - 만약, 127을 사용하고 싶다면. int보다는 메모리의 크기가 작은 byte가 더 효율적일 것이다.
 
 
-> 실수형의 디폴트는 double, 정수형의 디폴트는 int라는 것.   
+<br>
 
-> float정의 할 때는 "F", long정의 할 때는 "L" 명시. 
+
+> 정수형의 디폴트는 int, 실수형의 디폴트는 double  
+
+> long정의 할 때는 "L" 명시, float정의 할 때는 "F"  
+
+> int의 경우 큰거 쓸 때 L을 명시하고, double의 경우 작은거 쓸 때 F를 명시하니 반대임에 주의  
 
 
 
@@ -218,9 +334,12 @@ System.out.println(a)
   - 그냥 실수형의 디폴트는 double, 정수형의 디폴트는 int라는 것이라는 것을 알고 있어라.
 
 
+<br><br><br><br>
+
+
 ---
 
-# 형 변환(Type conversion)(강의 28)
+# 형 변환(Type conversion)
 
 
 같은 숫자라도 타입에 따라 컴퓨터에 저장되는 bit값이 다르다.
@@ -230,6 +349,9 @@ System.out.println(a)
 - int 200 : 00000000 00000000 00000000 11001000
 
 - float 200F : 01000011 01001000 00000000 00000000
+
+
+<br><br>
 
 
 ## 1. 자동(암시적) 형변환(Implicit Conversion)
@@ -261,11 +383,19 @@ double c = a + b;
 ## 3) float가 double에 들어가 자동형변환이 일어나며 4.0로 변해, 저장이된다.
 ```
 
+<br><br>
+
+
 
 
 ## 2. 명시적 형변환(Explicit Conversion)
 
  : 수동적으로 형을 변환한다.
+
+
+- 자료형의 범위에 주의
+
+- 작은 타입으로 변환할 때 사용하는 것이기 떄문에, 변환 대상이 해당 작은 타입의 최댓값보다 크면 **"정보손실"**이 발생
 
 
 
@@ -277,9 +407,12 @@ ex2) int b = (int)100.0F;
 ex3) int c = (int)100.123F; # 이 경우, c는 100이다.(소수점 제외)
 ```
 
+<br><br><br><br>
+
+
 ---
 
-# 연산자(강의30)
+# 연산자
 
 
 
@@ -334,6 +467,9 @@ System.out.println(i); # 7 출력
 
 
 
+<br><br>
+
+
 ## 2. 비교(관계)연산자
 
  : 값을 비교할 떄 사용. =, >, >=, =!, == 이 있다.
@@ -365,105 +501,20 @@ System.out.println(a == b); # flase
 System.out.println(a.equals(b)); # true
 ```
 
----
-
-# IF_조건문(강의35)
-
-- Booealn(불린) : true, false
-
-- 조건문은 if절과 then절로 나뉜다.
-
-    - if절이 true일 때, then절이 실행된다.<br><br>
+<br><br>
 
 
+## 3. 논리 연산자
 
-- 구성
+ : 여러 조건 (Boolean)을 결합할 때 사용. 이틀 통해 코드를 간략하게 작성할 수 있다. &&, ||, !이 있다.
 
-  - if : 기본적으로 사용되는 것. true이면 해당 then절을 실행(false이면 다음으로 넘어감)
 
-  - else if : 앞의 if, else if절이 false일 때, 실행된다. 마찬가지로 true이면 해당 then절을 실행.
+어려운 건 없으니, 아래 사진만 참고하도록하자.
 
-  - else : (Boolean)이 존재하지 않는다. 앞에서의 조건 절이 모두다 false이면 else의 then절을 무조건 실행시킨다.
 
-    - if, else if, else 중 우선적인 Ture인 if절에 대해 `하나만!` 실행된다.
+![image](https://github.com/Jyassmin/Causality_Extraction/assets/88031549/1cbf70d2-6c96-40df-8e9e-a0c7c34e4caf)
 
 
 
-```python
-# 기본 형식
-if(Boolean){
-    명령문;
-}
-```
+끝!
 
-
-```python
-# if ~ else
-if(Boolean){
-    명령문1;
-} else {
-    명령문2;
-}
-```
-
-
-```python
-# if ~ else if ~ else
-if(Boolean){
-    명령문1;
-} else if(Boolean) {
-    명령문2;
-} else {
-    명령문3;
-}
-```
-
-### 1) 조건문의 응용
-
-
-`java ~/(directory of package) LoginDemo (입력값)`  
-
-위를 터미널에서 실행시키면 아래 코드가 실행되고 "egoing"을 실행하면 right가 리턴된다. 다른 값을 입력하면 wrong이 리턴됨.
-
-- 앞에서 정리한 것처럼, 문자열 비교는 equals를 사용.
-
-- 입력값은 void main 괄호 안에 있는 args 변수에 저장이 되며, args[0]에 값이 들어있어서 변수에 담아준다.
-
-
-
-```python
-package org.opentutorials.javatutorials.condition;
- 
-public class LoginDemo {
-    public static void main(String[] args) {
-        String id = args[0];
-        if(id.equals("egoing")){
-            System.out.println("right");
-        } else {
-            System.out.println("wrong");
-        }
-    }
-}
-```
-
-
-```python
-```
-
-
-```python
-23/06/07
-38강 이어서~
-```
-
-
-```python
-```
-
-
-```python
-```
-
-
-```python
-```
